@@ -14,7 +14,7 @@ func _ready():
 	character_mover.init(self)
 
 
-func _process(_delta):
+func _process(delta):
 	
 	# exit game
 	if Input.is_action_just_pressed("exit"):

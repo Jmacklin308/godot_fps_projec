@@ -18,7 +18,7 @@ export var ignore_rotation = false #for player movement, AI uses global position
 #broadcast our info
 signal movement_info 
 
-var frozen = false #stop movement of player 
+var frozen = false #stop movement of player during death
 
 func _ready():
 	drag = float(move_accel) / max_speed
@@ -36,11 +36,13 @@ func set_move_vec(_move_vec: Vector3):
 func _physics_process(delta):
 	if frozen:
 		return
+		
 	var cur_move_vec = move_vec
+	
 	if !ignore_rotation:
 		cur_move_vec = cur_move_vec.rotated(Vector3.UP, body_to_move.rotation.y)
 	
-	velocity += move_accel * cur_move_vec - velocity * Vector3(drag, 0, drag) + gravity * Vector3.DOWN * delta
+	velocity += move_accel * cur_move_vec - velocity * Vector3(drag, 0, drag) + gravity * Vector3.DOWN *  delta
 	velocity = body_to_move.move_and_slide_with_snap(velocity,snap_vec,Vector3.UP)
 		
 	var grounded = body_to_move.is_on_floor()
@@ -52,7 +54,6 @@ func _physics_process(delta):
 		snap_vec = Vector3.ZERO
 	else:
 		snap_vec = Vector3.DOWN
-		
 	pressed_jump = false
 	emit_signal("movement_info", velocity, grounded)
 	
