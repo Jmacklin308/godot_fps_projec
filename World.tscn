@@ -1,0 +1,244 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Enviroment/Raw_assets/grass_lowres.png" type="Texture" id=1]
+[ext_resource path="res://Enviroment/Assets/shed.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Enviroment/Assets/brickwall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=4]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 1 )
+uv1_scale = Vector3( 50, 50, 0 )
+
+[sub_resource type="CubeMesh" id=2]
+material = SubResource( 1 )
+size = Vector3( 100, 2, 100 )
+
+[sub_resource type="ConcavePolygonShape" id=3]
+data = PoolVector3Array( -50, 1, 50, 50, 1, 50, -50, -1, 50, 50, 1, 50, 50, -1, 50, -50, -1, 50, 50, 1, -50, -50, 1, -50, 50, -1, -50, -50, 1, -50, -50, -1, -50, 50, -1, -50, 50, 1, 50, 50, 1, -50, 50, -1, 50, 50, 1, -50, 50, -1, -50, 50, -1, 50, -50, 1, -50, -50, 1, 50, -50, -1, -50, -50, 1, 50, -50, -1, 50, -50, -1, -50, 50, 1, 50, -50, 1, 50, 50, 1, -50, -50, 1, 50, -50, 1, -50, 50, 1, -50, -50, -1, 50, 50, -1, 50, -50, -1, -50, 50, -1, 50, 50, -1, -50, -50, -1, -50 )
+
+[sub_resource type="NavigationMesh" id=4]
+vertices = PoolVector3Array( -30.5, 1.4, -44.3, -28.4, 1.4, -44.6, -28.7, 1.4, -49.7, -39.2, 1.4, -49.7, -49.7, 1.4, -2, -30.5, 1.4, -2, -30.5, 1.4, -12.8, -49.7, 1.4, -14, -39.2, 1.4, -49.7, -49.7, 1.4, -49.7, -49.7, 1.4, -38, -30.5, 1.4, -33.8, -30.5, 1.4, -44.3, -39.2, 1.4, -49.7, -30.5, 1.4, -33.8, -39.2, 1.4, -49.7, -49.7, 1.4, -38, -49.7, 1.4, -26, -30.5, 1.4, -23.3, -30.5, 1.4, -23.3, -49.7, 1.4, -26, -49.7, 1.4, -14, -30.5, 1.4, -12.8, -21.8, 1.4, -49.7, -28.7, 1.4, -49.7, -28.4, 1.4, -44.6, -21.5, 1.4, -44.6, 6.7, 1.4, -44.6, 7, 1.4, -49.7, -0.200001, 1.4, -49.7, -0.200001, 1.4, -44.6, 28.3, 1.4, -44.6, 28.6, 1.4, -49.7, 21.4, 1.4, -49.7, 21.1, 1.4, -44.6, -7.4, 1.4, -44.6, -0.200001, 1.4, -44.6, -0.200001, 1.4, -49.7, -7.4, 1.4, -49.7, 21.1, 1.4, -44.6, 21.4, 1.4, -49.7, 14.2, 1.4, -49.7, 13.9, 1.4, -44.6, -14.3, 1.4, -44.6, -7.4, 1.4, -44.6, -7.4, 1.4, -49.7, -14.6, 1.4, -49.7, 13.9, 1.4, -44.6, 14.2, 1.4, -49.7, 7, 1.4, -49.7, 6.7, 1.4, -44.6, -21.5, 1.4, -44.6, -14.3, 1.4, -44.6, -14.6, 1.4, -49.7, -21.8, 1.4, -49.7, 28.6, 1.4, -49.7, 28.3, 1.4, -44.6, 30.4, 1.4, -44.3, 39.1, 1.4, -49.7, 30.1, 1.4, -11, 49.6, 1.4, -6.2, 49.6, 1.4, -12.5, 49.6, 1.4, -43.7, 49.6, 1.4, -49.7, 39.1, 1.4, -49.7, 49.6, 1.4, -37.4, 49.6, 1.4, -43.7, 39.1, 1.4, -49.7, 39.1, 1.4, -49.7, 30.4, 1.4, -44.3, 30.1, 1.4, -33.2, 49.6, 1.4, -31.1, 49.6, 1.4, -37.4, 30.1, 1.4, -11, 49.6, 1.4, -12.5, 49.6, 1.4, -18.8, 30.1, 1.4, -22.1, 30.1, 1.4, -33.2, 30.1, 1.4, -22.1, 49.6, 1.4, -24.8, 49.6, 1.4, -31.1, 30.4, 1.4, 0.0999985, 49.6, 1.4, 0.0999985, 49.6, 1.4, -6.2, 30.1, 1.4, -11, 30.1, 1.4, -22.1, 49.6, 1.4, -18.8, 49.6, 1.4, -24.8, -22.7, 3.2, -44, -29.9, 3.2, -44, -29.6, 3.4, -43.4, -22.7, 3.2, -43.7, 7.3, 3.4, 0.0999985, 14.8, 3.4, 0.0999985, 14.8, 3.4, -0.200001, 7.3, 3.4, -0.200001, -15.2, 3.2, -44, -22.7, 3.2, -44, -22.7, 3.2, -43.7, -15.2, 3.2, -43.7, -14.6, 3.4, -0.200001, -15.2, 3.4, 0.0999985, -7.7, 3.4, 0.0999985, -7.4, 3.4, -0.200001, -15.2, 3.2, -44, -15.2, 3.2, -43.7, -8, 3.2, -43.7, -7.7, 3.2, -44, -7.4, 3.4, -0.200001, -7.7, 3.4, 0.0999985, -0.200001, 3.4, 0.0999985, 0.0999985, 3.4, -0.200001, -7.7, 3.2, -44, -8, 3.2, -43.7, -0.5, 3.2, -43.7, -0.200001, 3.2, -44, 0.0999985, 3.4, -0.200001, -0.200001, 3.4, 0.0999985, 7.3, 3.4, 0.0999985, 7.3, 3.4, -0.200001, -0.200001, 3.2, -44, -0.5, 3.2, -43.7, 6.7, 3.2, -43.7, 7.3, 3.2, -44, 14.8, 3.4, 0.0999985, 22.3, 3.4, 0.0999985, 22, 3.4, -0.200001, 14.8, 3.4, -0.200001, 7.3, 3.2, -44, 6.7, 3.2, -43.7, 14.2, 3.2, -43.7, 14.8, 3.2, -44, 22.3, 3.4, 0.0999985, 29.8, 3.4, 0.0999985, 29.2, 3.4, -0.5, 22, 3.4, -0.200001, 14.8, 3.2, -44, 14.2, 3.2, -43.7, 21.4, 3.2, -43.7, 22.3, 3.2, -44, 29.5, 3.4, -11, 29.2, 3.4, -11.6, 29.2, 3.4, -0.5, 29.8, 3.4, 0.0999985, 22.3, 3.2, -44, 21.4, 3.2, -43.7, 28.9, 3.4, -43.7, 29.8, 3.2, -44, -22.7, 3.4, 0.0999985, -22.1, 3.4, -0.200001, -29.3, 3.4, -0.200001, -29.9, 3.4, 0.0999985, -29.6, 3.4, -43.4, -29.9, 3.2, -44, -29.9, 3.4, -33.2, -29.6, 3.4, -32.6, -15.2, 3.4, 0.0999985, -14.6, 3.4, -0.200001, -22.1, 3.4, -0.200001, -22.7, 3.4, 0.0999985, -29.6, 3.4, -32.6, -29.9, 3.4, -33.2, -29.9, 3.4, -22.1, -29.6, 3.4, -21.8, 29.5, 3.4, -22.1, 29.2, 3.4, -22.4, 29.2, 3.4, -11.6, 29.5, 3.4, -11, 29.5, 3.4, -33.2, 29.8, 3.2, -44, 28.9, 3.4, -43.7, 29.2, 3.4, -33.2, -29.6, 3.4, -21.8, -29.9, 3.4, -22.1, -29.9, 3.4, -11, -29.6, 3.4, -11, 29.5, 3.4, -33.2, 29.2, 3.4, -33.2, 29.2, 3.4, -22.4, 29.5, 3.4, -22.1, -29.9, 3.4, -11, -29.9, 3.4, 0.0999985, -29.3, 3.4, -0.200001, -29.6, 3.4, -11, -29, 1.4, -19.4, -15.5, 1.4, -19.4, -15.2, 1.4, -21.2, -29, 1.4, -31.4, -21.2, 1.4, -43.1, -29, 1.4, -43.1, -29, 1.4, -31.4, -29, 1.4, -31.4, -15.2, 1.4, -21.2, -13.1, 1.4, -21.2, -13.1, 1.4, -43.1, -21.2, 1.4, -43.1, 28.6, 1.4, -32.6, 28.6, 1.4, -43.1, 18.1, 1.4, -43.1, 18.1, 1.4, -0.800003, 28.6, 1.4, -0.800003, 28.6, 1.4, -11.6, -10.7, 1.4, -17.6, -13.1, 1.4, -17.3, -13.1, 1.4, -0.800003, -2.9, 1.4, -0.800003, 7.6, 1.4, -43.1, -2.9, 1.4, -43.1, -10.7, 1.4, -20.9, -10.7, 1.4, -20.9, -10.7, 1.4, -17.6, -2.9, 1.4, -0.800003, 7.6, 1.4, -0.800003, -13.1, 1.4, -43.1, -13.1, 1.4, -21.2, -10.7, 1.4, -20.9, -2.9, 1.4, -43.1, 28.6, 1.4, -22.1, 28.6, 1.4, -32.6, 18.1, 1.4, -43.1, 28.6, 1.4, -22.1, 18.1, 1.4, -43.1, 7.6, 1.4, -43.1, -10.7, 1.4, -20.9, 7.6, 1.4, -0.800003, 28.6, 1.4, -11.6, 7.6, 1.4, -0.800003, 18.1, 1.4, -0.800003, 28.6, 1.4, -11.6, -14.9, 4, -20.6, -14.9, 4, -17.9, -11.3, 4, -17.9, -11.3, 4, -20.6, -14.9, 4.6, -19.25, -11.3, 4.6, -19.25, -29, 1.4, -10.1, -29, 1.4, -0.800003, -21.2, 1.4, -0.800003, -15.2, 1.4, -17.3, -15.5, 1.4, -19.4, -29, 1.4, -19.4, -29, 1.4, -10.1, -13.1, 1.4, -0.800003, -13.1, 1.4, -17.3, -15.2, 1.4, -17.3, -29, 1.4, -10.1, -21.2, 1.4, -0.800003, 43.3, 1.4, 49.6, 49.6, 1.4, 49.6, 49.6, 1.4, 43.3, -49.7, 1.4, 43, -49.7, 1.4, 49.6, -43.7, 1.4, 49.6, -49.7, 1.4, 43, -43.7, 1.4, 49.6, -37.4, 1.4, 49.6, 37, 1.4, 49.6, 43.3, 1.4, 49.6, 49.6, 1.4, 43.3, 37, 1.4, 49.6, 49.6, 1.4, 43.3, 49.6, 1.4, 37, 30.7, 1.4, 49.6, -49.7, 1.4, 36.7, -49.7, 1.4, 43, -37.4, 1.4, 49.6, -31.4, 1.4, 49.6, 49.6, 1.4, 0.0999985, 30.4, 1.4, 0.0999985, 30.1, 1.4, 0.699997, 49.6, 1.4, 6.1, -30.2, 1.4, 0.699997, -30.5, 1.4, -2, -49.7, 1.4, -2, -49.7, 1.4, 4.3, 12.1, 1.4, 49.6, 18.4, 1.4, 49.6, 49.6, 1.4, 24.7, 49.6, 1.4, 24.7, 22.3, 1.4, 0.699997, 14.8, 1.4, 0.699997, -30.2, 1.4, 0.699997, -49.7, 1.4, 4.3, -49.7, 1.4, 10.9, -49.7, 1.4, 30.1, -19.1, 1.4, 49.6, -12.8, 1.4, 49.6, 5.8, 1.4, 49.6, 7.3, 1.4, 0.699997, -0.200001, 1.4, 0.699997, -0.200001, 1.4, 49.6, 49.6, 1.4, 12.4, 49.6, 1.4, 6.1, 30.1, 1.4, 0.699997, -30.2, 1.4, 0.699997, -49.7, 1.4, 10.9, -49.7, 1.4, 17.2, 49.6, 1.4, 18.4, 49.6, 1.4, 12.4, 30.1, 1.4, 0.699997, 30.7, 1.4, 49.6, 49.6, 1.4, 37, 49.6, 1.4, 30.7, 24.7, 1.4, 49.6, -49.7, 1.4, 30.1, -49.7, 1.4, 36.7, -31.4, 1.4, 49.6, -25.1, 1.4, 49.6, -30.2, 1.4, 0.699997, -49.7, 1.4, 17.2, -49.7, 1.4, 23.8, 49.6, 1.4, 24.7, 49.6, 1.4, 18.4, 30.1, 1.4, 0.699997, 22.3, 1.4, 0.699997, -15.2, 1.4, 0.699997, -22.7, 1.4, 0.699997, -49.7, 1.4, 30.1, -49.7, 1.4, 30.1, -12.8, 1.4, 49.6, -6.5, 1.4, 49.6, -7.7, 1.4, 0.699997, -15.2, 1.4, 0.699997, 24.7, 1.4, 49.6, 49.6, 1.4, 30.7, 49.6, 1.4, 24.7, 18.4, 1.4, 49.6, -30.2, 1.4, 0.699997, -49.7, 1.4, 23.8, -49.7, 1.4, 30.1, -22.7, 1.4, 0.699997, -49.7, 1.4, 30.1, -25.1, 1.4, 49.6, -19.1, 1.4, 49.6, 49.6, 1.4, 24.7, 14.8, 1.4, 0.699997, 7.3, 1.4, 0.699997, 5.8, 1.4, 49.6, 12.1, 1.4, 49.6, -6.5, 1.4, 49.6, -0.200001, 1.4, 49.6, -0.200001, 1.4, 0.699997, -7.7, 1.4, 0.699997 )
+polygons = [ PoolIntArray( 1, 0, 2 ), PoolIntArray( 2, 0, 3 ), PoolIntArray( 5, 4, 6 ), PoolIntArray( 6, 4, 7 ), PoolIntArray( 10, 9, 8 ), PoolIntArray( 13, 12, 11 ), PoolIntArray( 18, 17, 14 ), PoolIntArray( 14, 17, 16 ), PoolIntArray( 14, 16, 15 ), PoolIntArray( 22, 21, 19 ), PoolIntArray( 19, 21, 20 ), PoolIntArray( 24, 23, 25 ), PoolIntArray( 25, 23, 26 ), PoolIntArray( 30, 29, 27 ), PoolIntArray( 27, 29, 28 ), PoolIntArray( 34, 33, 31 ), PoolIntArray( 31, 33, 32 ), PoolIntArray( 38, 37, 35 ), PoolIntArray( 35, 37, 36 ), PoolIntArray( 40, 39, 41 ), PoolIntArray( 41, 39, 42 ), PoolIntArray( 44, 43, 45 ), PoolIntArray( 45, 43, 46 ), PoolIntArray( 50, 49, 47 ), PoolIntArray( 47, 49, 48 ), PoolIntArray( 52, 51, 53 ), PoolIntArray( 53, 51, 54 ), PoolIntArray( 56, 55, 57 ), PoolIntArray( 57, 55, 58 ), PoolIntArray( 61, 60, 59 ), PoolIntArray( 64, 63, 62 ), PoolIntArray( 67, 66, 65 ), PoolIntArray( 69, 68, 70 ), PoolIntArray( 70, 68, 72 ), PoolIntArray( 70, 72, 71 ), PoolIntArray( 74, 73, 75 ), PoolIntArray( 75, 73, 76 ), PoolIntArray( 80, 79, 77 ), PoolIntArray( 77, 79, 78 ), PoolIntArray( 82, 81, 83 ), PoolIntArray( 83, 81, 84 ), PoolIntArray( 87, 86, 85 ), PoolIntArray( 91, 90, 88 ), PoolIntArray( 88, 90, 89 ), PoolIntArray( 95, 94, 92 ), PoolIntArray( 92, 94, 93 ), PoolIntArray( 99, 98, 96 ), PoolIntArray( 96, 98, 97 ), PoolIntArray( 103, 102, 100 ), PoolIntArray( 100, 102, 101 ), PoolIntArray( 105, 104, 106 ), PoolIntArray( 106, 104, 107 ), PoolIntArray( 111, 110, 108 ), PoolIntArray( 108, 110, 109 ), PoolIntArray( 115, 114, 112 ), PoolIntArray( 112, 114, 113 ), PoolIntArray( 119, 118, 116 ), PoolIntArray( 116, 118, 117 ), PoolIntArray( 121, 120, 122 ), PoolIntArray( 122, 120, 123 ), PoolIntArray( 127, 126, 124 ), PoolIntArray( 124, 126, 125 ), PoolIntArray( 131, 130, 128 ), PoolIntArray( 128, 130, 129 ), PoolIntArray( 135, 134, 132 ), PoolIntArray( 132, 134, 133 ), PoolIntArray( 137, 136, 138 ), PoolIntArray( 138, 136, 139 ), PoolIntArray( 141, 140, 142 ), PoolIntArray( 142, 140, 143 ), PoolIntArray( 147, 146, 144 ), PoolIntArray( 144, 146, 145 ), PoolIntArray( 151, 150, 148 ), PoolIntArray( 148, 150, 149 ), PoolIntArray( 155, 154, 152 ), PoolIntArray( 152, 154, 153 ), PoolIntArray( 157, 156, 158 ), PoolIntArray( 158, 156, 159 ), PoolIntArray( 163, 162, 160 ), PoolIntArray( 160, 162, 161 ), PoolIntArray( 165, 164, 166 ), PoolIntArray( 166, 164, 167 ), PoolIntArray( 171, 170, 168 ), PoolIntArray( 168, 170, 169 ), PoolIntArray( 175, 174, 172 ), PoolIntArray( 172, 174, 173 ), PoolIntArray( 177, 176, 178 ), PoolIntArray( 178, 176, 179 ), PoolIntArray( 183, 182, 180 ), PoolIntArray( 180, 182, 181 ), PoolIntArray( 185, 184, 186 ), PoolIntArray( 186, 184, 187 ), PoolIntArray( 190, 189, 188 ), PoolIntArray( 192, 191, 193 ), PoolIntArray( 193, 191, 195 ), PoolIntArray( 193, 195, 194 ), PoolIntArray( 198, 197, 196 ), PoolIntArray( 201, 200, 199 ), PoolIntArray( 203, 202, 204 ), PoolIntArray( 204, 202, 205 ), PoolIntArray( 206, 208, 207 ), PoolIntArray( 210, 209, 211 ), PoolIntArray( 211, 209, 212 ), PoolIntArray( 214, 213, 215 ), PoolIntArray( 215, 213, 216 ), PoolIntArray( 219, 218, 217 ), PoolIntArray( 221, 220, 222 ), PoolIntArray( 222, 220, 225 ), PoolIntArray( 222, 225, 224 ), PoolIntArray( 222, 224, 223 ), PoolIntArray( 228, 227, 226 ), PoolIntArray( 232, 234, 229 ), PoolIntArray( 229, 234, 233 ), PoolIntArray( 233, 234, 231 ), PoolIntArray( 233, 231, 230 ), PoolIntArray( 237, 236, 235 ), PoolIntArray( 239, 238, 240 ), PoolIntArray( 240, 238, 241 ), PoolIntArray( 244, 243, 245 ), PoolIntArray( 245, 243, 246 ), PoolIntArray( 246, 243, 242 ), PoolIntArray( 249, 248, 247 ), PoolIntArray( 252, 251, 250 ), PoolIntArray( 253, 255, 254 ), PoolIntArray( 258, 257, 256 ), PoolIntArray( 260, 259, 261 ), PoolIntArray( 261, 259, 262 ), PoolIntArray( 264, 263, 265 ), PoolIntArray( 265, 263, 266 ), PoolIntArray( 268, 267, 269 ), PoolIntArray( 269, 267, 270 ), PoolIntArray( 272, 271, 273 ), PoolIntArray( 273, 271, 274 ), PoolIntArray( 277, 276, 275 ), PoolIntArray( 280, 279, 278 ), PoolIntArray( 283, 282, 281 ), PoolIntArray( 286, 285, 284 ), PoolIntArray( 290, 289, 287 ), PoolIntArray( 287, 289, 288 ), PoolIntArray( 293, 292, 291 ), PoolIntArray( 296, 295, 294 ), PoolIntArray( 299, 298, 297 ), PoolIntArray( 301, 300, 302 ), PoolIntArray( 302, 300, 303 ), PoolIntArray( 305, 304, 306 ), PoolIntArray( 306, 304, 307 ), PoolIntArray( 310, 309, 308 ), PoolIntArray( 312, 311, 313 ), PoolIntArray( 313, 311, 314 ), PoolIntArray( 317, 316, 315 ), PoolIntArray( 319, 318, 320 ), PoolIntArray( 320, 318, 322 ), PoolIntArray( 320, 322, 321 ), PoolIntArray( 324, 323, 325 ), PoolIntArray( 325, 323, 326 ), PoolIntArray( 328, 327, 329 ), PoolIntArray( 329, 327, 330 ), PoolIntArray( 333, 332, 331 ), PoolIntArray( 335, 334, 336 ), PoolIntArray( 336, 334, 338 ), PoolIntArray( 336, 338, 337 ), PoolIntArray( 340, 339, 341 ), PoolIntArray( 341, 339, 342 ) ]
+agent/height = 3.72
+agent/radius = 0.1
+
+[sub_resource type="ProceduralSky" id=5]
+radiance_size = 0
+sky_top_color = Color( 0.262745, 0.262745, 0.262745, 1 )
+sky_horizon_color = Color( 0.517647, 0.00392157, 0.00392157, 1 )
+sky_curve = 0.0839727
+sky_energy = 1.38
+ground_bottom_color = Color( 0.00784314, 0.341176, 0.0823529, 1 )
+ground_horizon_color = Color( 0.776471, 0.0705882, 0.0392157, 1 )
+ground_curve = 0.183794
+ground_energy = 0.15
+sun_color = Color( 0.776471, 0.0705882, 0.0392157, 1 )
+sun_latitude = 41.62
+sun_longitude = -84.71
+sun_angle_min = 1.35
+sun_angle_max = 49.19
+sun_curve = 0.110957
+sun_energy = 32.81
+
+[sub_resource type="Environment" id=6]
+background_mode = 2
+background_sky = SubResource( 5 )
+background_sky_custom_fov = 71.5
+
+[node name="World" type="Spatial"]
+
+[node name="Environment" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.161862, -0.0342548, -0.0428295 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Ground" type="MeshInstance" parent="Environment"]
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Environment/Ground"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Environment/Ground/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="BrickWalls" type="Spatial" parent="Environment"]
+
+[node name="brickwall" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+
+[node name="brickwall2" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0 )
+
+[node name="brickwall3" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0 )
+
+[node name="brickwall4" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0 )
+
+[node name="brickwall5" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0 )
+
+[node name="brickwall6" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0 )
+
+[node name="brickwall7" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 0 )
+
+[node name="brickwall8" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 0 )
+
+[node name="brickwall9" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -29.7451, 0, -1.60448 )
+
+[node name="brickwall17" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -29.7451, 0, -5.60448 )
+
+[node name="brickwall18" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -29.7451, 0, -9.60448 )
+
+[node name="brickwall19" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -29.7451, 0, -13.6045 )
+
+[node name="brickwall20" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -29.7451, 0, -17.6045 )
+
+[node name="brickwall21" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -29.7451, 0, -21.6045 )
+
+[node name="brickwall22" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -29.7451, 0, -25.6045 )
+
+[node name="brickwall23" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -29.7451, 0, -29.6045 )
+
+[node name="brickwall24" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -29.7451, 0, -33.6045 )
+
+[node name="brickwall25" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -29.7451, 0, -37.6045 )
+
+[node name="brickwall26" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -29.7451, 0, -41.6045 )
+
+[node name="brickwall42" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 29.2549, 0, -1.60448 )
+
+[node name="brickwall43" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 29.2549, 0, -5.60448 )
+
+[node name="brickwall44" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 29.2549, 0, -9.60448 )
+
+[node name="brickwall45" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 29.2549, 0, -13.6045 )
+
+[node name="brickwall46" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 29.2549, 0, -17.6045 )
+
+[node name="brickwall47" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 29.2549, 0, -21.6045 )
+
+[node name="brickwall48" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 29.2549, 0, -25.6045 )
+
+[node name="brickwall49" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 29.2549, 0, -29.6045 )
+
+[node name="brickwall50" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 29.2549, 0, -33.6045 )
+
+[node name="brickwall51" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 29.2549, 0, -37.6045 )
+
+[node name="brickwall52" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 29.2549, 0, -41.6045 )
+
+[node name="brickwall10" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0, 0 )
+
+[node name="brickwall11" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 0 )
+
+[node name="brickwall12" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 0 )
+
+[node name="brickwall13" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 0 )
+
+[node name="brickwall14" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 0 )
+
+[node name="brickwall15" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0 )
+
+[node name="brickwall16" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0 )
+
+[node name="brickwall27" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0359879, -1.90735e-06, -43.8396 )
+
+[node name="brickwall28" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.03599, -1.90735e-06, -43.8396 )
+
+[node name="brickwall29" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.03599, -1.90735e-06, -43.8396 )
+
+[node name="brickwall30" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.036, -1.90735e-06, -43.8396 )
+
+[node name="brickwall31" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.036, -1.90735e-06, -43.8396 )
+
+[node name="brickwall32" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.036, -1.90735e-06, -43.8396 )
+
+[node name="brickwall33" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.036, -1.90735e-06, -43.8396 )
+
+[node name="brickwall34" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.036, -1.90735e-06, -43.8396 )
+
+[node name="brickwall35" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.964, -1.90735e-06, -43.8396 )
+
+[node name="brickwall36" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.964, -1.90735e-06, -43.8396 )
+
+[node name="brickwall37" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.964, -1.90735e-06, -43.8396 )
+
+[node name="brickwall38" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.964, -1.90735e-06, -43.8396 )
+
+[node name="brickwall39" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.964, -1.90735e-06, -43.8396 )
+
+[node name="brickwall40" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.96401, -1.90735e-06, -43.8396 )
+
+[node name="brickwall41" parent="Environment/BrickWalls" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.96401, -1.90735e-06, -43.8396 )
+
+[node name="shed" parent="Environment" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1995, 0, -19.1669 )
+
+[node name="Navigation" type="Navigation" parent="."]
+visible = false
+
+[node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="Navigation"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.161862, -0.0342548, -0.0428295 )
+navmesh = SubResource( 4 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 6 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="WorldEnvironment"]
+transform = Transform( -0.00513224, -0.794156, -0.607692, -0.137832, -0.601338, 0.787017, -0.990442, 0.0877987, -0.106374, -38.1444, 31.7689, -23.0861 )
+light_color = Color( 0.894118, 0.333333, 0.113725, 1 )
+light_energy = 2.38
+light_specular = 0.55
+shadow_enabled = true
+directional_shadow_normal_bias = 1.46
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, -1, 1.62921e-07, 0, -1.62921e-07, -1, 1, -4.37114e-08, 7.1215e-15, 0, 1, -21.8422 )
